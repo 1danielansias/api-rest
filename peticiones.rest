@@ -1,0 +1,68 @@
+@host = http://localhost:3000
+
+## POSTS
+
+GET {{host}}/api/posts
+
+###
+GET {{host}}/api/posts/13
+
+###
+POST {{host}}/api/posts
+Content-Type: application/json
+
+{
+  "titulo": "Como usar REST API",
+  "descripcion": "Como usar REST API en tu aplicación.",
+  "categoria": "Tecnología",
+  "autor_id": 2
+}
+
+###
+PUT {{host}}/api/posts/13
+Content-Type: application/json
+
+{
+  "titulo": "New POST Updated 3",
+  "descripcion": "Este en un nuevo post ACTUALIZADO 3.",
+  "categoria": "Tecnología",
+  "autor_id": 1
+}
+
+###
+DELETE {{host}}/api/posts/14
+
+
+## AUTORES
+
+###
+GET {{host}}/api/autores
+
+###
+GET {{host}}/api/autores/2
+
+###
+GET {{host}}/api/autores/13/posts 
+
+###
+POST {{host}}/api/autores
+Content-Type: application/json
+
+{
+  "nombre": "Nuevo Autor 3",
+  "email": "nuevoautor3@gmail.com",
+  "imagen": "https://picsum.photos/200/300"
+}
+
+###
+PUT {{host}}/api/autores/11
+Content-Type: application/json
+
+{
+  "nombre": "Nuevo Autor Editado",
+  "email": "nuevoautoreditado@gmail.com",
+  "imagen": "https://picsum.photos/200/300"
+}
+
+###
+DELETE {{host}}/api/autores/3
